@@ -1,0 +1,223 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  background-color: var(--bg-color);
+}
+
+main {
+  display: flex;
+  width: 95%;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 9;
+}
+
+section>div.player1 {
+  background-color: var(--p1-primary-color);
+  color: var(--p1-secondary-color)
+}
+
+section>div.player2 {
+  background-color: var(--p2-primary-color);
+  color: var(--p2-secondary-color)
+}
+
+sidebar {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 3;
+  background-color: var(--sidebar-bg-color);
+}
+
+.total-points {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12rem;
+  font-weight: bolder;
+}
+
+.total-points.player1 {
+  color: var(--p1-primary-color)
+}
+
+.total-points.player2 {
+  color: var(--p2-primary-color)
+}
+
+.timer-content {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  flex-grow: 6;
+  justify-content: center;
+  align-items: center;
+  font-weight: bolder;
+  background-color: var(--timer-bg-color);
+  color: var(--timer-text-color);
+  flex: 1;
+}
+
+.timer-content>.timer-display {
+  font-size: 7rem;
+}
+
+.timer-content>.timer-controls {
+  font-size: 1rem;
+}
+
+.atleta-name {
+  padding: 1rem 0;
+  font-size: 3rem;
+  font-weight: bolder;
+  text-transform: uppercase;
+  text-align: center;
+  border-bottom: 1px solid rgba(228, 227, 227, 0.171);
+  margin-bottom: 0.3rem;
+}
+
+.points-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.point-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 3;
+}
+
+.two-point-content>.point-content>.point-title {
+  font-size: 1rem;
+  min-height: 0;
+}
+
+.two-point-content>.point-content>.point-value {
+  font-size: 3rem;
+}
+
+.point-controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+.point-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bolder;
+  text-align: center;
+  min-height: 4rem;
+}
+
+.point-value {
+  font-size: 6rem;
+  font-weight: bolder;
+  ;
+}
+
+.btn {
+  background-color: rgb(243, 243, 243);
+  border: none;
+  color: black;
+  padding: 0.5rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  margin: 0.5rem;
+  cursor: pointer;
+  border-radius: 0.3rem;
+  min-width: 1.5rem;
+  opacity: 1;
+}
+
+a.btn:hover {
+  outline: none;
+  opacity: 0.8;
+  transition: 0.3s ease-in-out;
+}
+
+.hide {
+  display: none;
+}
+
+a.config>img {
+  width: 3.5rem;
+  height: 3.5rem;
+  background-color: none;
+  position: absolute;
+  z-index: 1000;
+  right: 0.5rem;
+  bottom: 0.5rem;
+}
+
+a.config:hover {
+  cursor: pointer;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 400px;
+}
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  margin-top: 0.5rem;
+  width: 100%;
+  min-width: 320px;
+}
+
+label {
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-weight: bolder;
+  width: 100%;
+}
+
+input[type=submit] {
+  margin-top: 1.5rem;
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+audio {
+  display: none;
+}
