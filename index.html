@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JiuJitsu - Score Board</title>
+  <meta name="keywords" content="jiujitsu, jiu-jitsu, placar, eletrônico, digital, campeonato, CBJJ, CBJJE, luta, arte, macial">
+  <link rel="stylesheet" href="./src/css/themes.css">
+  <link rel="stylesheet" href="./src/css/custom.css">
+  <link rel="stylesheet" href="./src/css/modal.css">
+</head>
+
+<body>
+  <main>
+    <section>
+      <div class="player1">
+        <div class="atleta-name" data-player-name="player1">Atleta 1</div>
+        <div class="points-content">
+          <div class="point-content">
+            <div class="point-title">Montada <br> Pegada nas Costa</div>
+            <div class="point-value" data-point-mounted="player1">0</div>
+            <div class="point-controls">
+              <a class="btn" onclick="player1.mountedDecrement()">-</a>
+              <div class="point-count">4</div>
+              <a class="btn" onclick="player1.mountedIncrement()">+</a>
+            </div>
+          </div>
+
+          <div class="point-content">
+            <div class="point-title">Passagem de Guarda</div>
+            <div class="point-value" data-point-guard="player1">0</div>
+            <div class="point-controls">
+              <a class="btn" onclick="player1.guardDecrement()">-</a>
+              <div class="point-count">3</div>
+              <a class="btn" onclick="player1.guardIncrement()">+</a>
+            </div>
+          </div>
+
+          <div class="point-content">
+            <div class="point-title">Queda <br> Raspagem <br> Joelho na Barriga</div>
+            <div class="point-value" data-point-overthrow="player1">0</div>
+            <div class="point-controls">
+              <a class="btn" onclick="player1.overthrowDecrement()">-</a>
+              <div class="point-count">2</div>
+              <a class="btn" onclick="player1.overthrowIncrement()">+</a>
+            </div>
+          </div>
+
+          <div class="two-point-content">
+
+            <div class="point-content">
+              <div class="point-title">Vantagem</div>
+              <div class="point-value" data-point-advantage="player1">0</div>
+              <div class="point-controls">
+                <a class="btn" onclick="player1.advantageDecrement()">-</a>
+                <a class="btn" onclick="player1.advantageIncrement()">+</a>
+              </div>
+            </div>
+
+
+            <div class="point-content">
+              <div class="point-title">Punição</div>
+              <div class="point-value" data-point-punishment="player1">0</div>
+              <div class="point-controls">
+                <a class="btn" onclick="player1.punishmentDecrement()">-</a>
+                <a class="btn" onclick="player1.punishmentIncrement()">+</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="player2">
+        <div class="atleta-name" data-player-name="player2">Atleta 2</div>
+        <div class="points-content">
+          <div class="point-content">
+            <div class="point-title">Montada <br> Pegada nas Costa</div>
+            <div class="point-value" data-point-mounted="player2">0</div>
+            <div class="point-controls">
+              <a class="btn" onclick="player2.mountedDecrement()">-</a>
+              <div class="point-count">4</div>
+              <a class="btn" onclick="player2.mountedIncrement()">+</a>
+            </div>
+          </div>
+
+          <div class="point-content">
+            <div class="point-title">Passagem de Guarda</div>
+            <div class="point-value" data-point-guard="player2">0</div>
+            <div class="point-controls">
+              <a class="btn" onclick="player2.guardDecrement()">-</a>
+              <div class="point-count">3</div>
+              <a class="btn" onclick="player2.guardIncrement()">+</a>
+            </div>
+          </div>
+
+          <div class="point-content">
+            <div class="point-title">Queda <br> Raspagem <br> Joelho na Barriga</div>
+            <div class="point-value" data-point-overthrow="player2">0</div>
+            <div class="point-controls">
+              <a class="btn" onclick="player2.overthrowDecrement()">-</a>
+              <div class="point-count">2</div>
+              <a class="btn" onclick="player2.overthrowIncrement()">+</a>
+            </div>
+          </div>
+
+          <div class="two-point-content">
+
+            <div class="point-content">
+              <div class="point-title">Vantagem</div>
+              <div class="point-value" data-point-advantage="player2">0</div>
+              <div class="point-controls">
+                <a class="btn" onclick="player2.advantageDecrement()">-</a>
+                <a class="btn" onclick="player2.advantageIncrement()">+</a>
+              </div>
+            </div>
+
+
+            <div class="point-content">
+              <div class="point-title">Punição</div>
+              <div class="point-value" data-point-punishment="player2">0</div>
+              <div class="point-controls">
+                <a class="btn" onclick="player2.punishmentDecrement()">-</a>
+                <a class="btn" onclick="player2.punishmentIncrement()">+</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <sidebar>
+      <div class="total-points player1" data-point-total="player1">0</div>
+      <div class="timer-content">
+        <div class="timer-display" data-show-timer>00:00</div>
+        <div class="timer-controls">
+          <a class="btn" data-timer-start>Iniciar</a>
+          <a class="btn" data-game-reset>Reiniciar</a>
+          <a class="config" id="myBtn" title="Configurar" data-config-content>
+            <img src="./src/images/config.png" alt="config">
+          </a>
+        </div>
+      </div>
+      <div class="total-points player2" data-point-total="player2">0</div>
+    </sidebar>
+
+  </main>
+
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h1> Configurar Luta</h1>
+    <form class="form-submit">
+      <div class="form-input">
+        <label for="player1">Atleta1: </label>
+        <input type="text" name="player1" id="player1" placeholder="Nome do atleta" required autocomplete="off">
+      </div>
+
+      <div class="form-input">
+        <label for="player2">Atleta2: </label>
+        <input type="text" name="player2" id="player2" placeholder="Nome do atleta" required autocomplete="off">
+      </div>
+
+      <div class="form-input">
+        <label for="timer">Tempo: <span></span></label>
+        <input type="range" id="timer" name="timer" min="0" max="10">
+      </div>
+
+      <input type="submit" class="btn" value="Configurar">
+    </form>
+  </div>
+
+  <div class="modal-footer">
+    <span>
+      Developed by <a href="https://github.com/Baihanu" target="_blank"> Lucas Eduardo</a>
+    </span>
+  </div>
+</div>
+
+  <audio controls data-countdown-sound>
+    <source src="./src/audio/323129-Crowd_chants_a_countdown--three-two-one-.mp3" type="audio/mp3">
+    <source src="./src/audio/mixkit-short-race-countdown-926.wav" type="audio/wav">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script src="./src/js/player.js"></script>
+  <script src="./src/js/timer.js"></script>
+  <script src="./src/js/game.js"></script>
+  <script src="./src/js/modal.js"></script>
+  <script src="./src/js/form-submit.js" ></script>
+  <script src="./src/js/refresh-page.js"></script>
+</body>
+
+</html>
