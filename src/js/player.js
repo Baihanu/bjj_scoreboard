@@ -1,4 +1,4 @@
-const pointValues = { mounted: 4, guard: 3, overthrow: 2, advantage: 1, punishment: 1 }
+const pointValues = { mounted: 4, guard: 3, overthrow: 2, advantage: 1, punishment: 1, normal: 1}
 
 function Player(dataKey, name) {
   this.mounted = 0;
@@ -6,11 +6,12 @@ function Player(dataKey, name) {
   this.overthrow = 0;
   this.advantage = 0;
   this.punishment = 0;
+  this.normal =0;
 
   this.dataKey = dataKey;
   this.name = name;
 
-  this.total = () => { return this.mounted + this.guard + this.overthrow }
+  this.total = () => { return this.mounted + this.guard + this.overthrow + this.normal}
 
   this.mountedIncrement = () => { this.pointIncrement('mounted'); }
   this.mountedDecrement = () => { this.pointDecrement('mounted'); }
@@ -22,7 +23,9 @@ function Player(dataKey, name) {
   this.advantageDecrement = () => { this.pointDecrement('advantage'); }
   this.punishmentIncrement = () => { this.pointIncrement('punishment'); }
   this.punishmentDecrement = () => { this.pointDecrement('punishment'); }
-
+  this.normalIncrement = () => { this.pointIncrement('normal'); }
+  this.normalDecrement = () => { this.pointDecrement('normal'); }
+  
   this.pointIncrement = function (key) {
     this[key] += pointValues[key]
 
@@ -60,12 +63,13 @@ function Player(dataKey, name) {
   }
 
   this.renderAllPoints = () => {
-    ['mounted', 'guard', 'overthrow', 'advantage', 'punishment', 'total'].forEach(key => {
+    ['normal', 'mounted', 'guard', 'overthrow', 'advantage', 'punishment', 'total'].forEach(key => {
       this.renderPointElement(key)
     })
   }
 
   this.reset = () => {
+    this.normal = 0;
     this.mounted = 0;
     this.guard = 0;
     this.overthrow = 0;
